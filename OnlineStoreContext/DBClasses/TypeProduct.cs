@@ -1,6 +1,6 @@
-﻿using OnlineStore.Core.Abstract;
+﻿using OnlineStore.Core.Abstracts;
 
-namespace OnlineStore.Core.DBClases
+namespace OnlineStore.Core.DBClasses
 {
     public class TypeProduct : ITypeProduct
     {

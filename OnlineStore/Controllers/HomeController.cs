@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OnlineStore.Models;
-using System.Diagnostics;
+using OnlineStore.View.Models;
 
-namespace OnlineStore.Controllers
+namespace OnlineStore.View.Controllers
 {
     public class HomeController : Controller
     {

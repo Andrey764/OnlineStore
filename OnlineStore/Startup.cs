@@ -1,10 +1,14 @@
+using OnlineStore.Core.Context;
+using OnlineStore.Core.DBClasses;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
-namespace OnlineStore
+namespace OnlineStore.View
 {
     public class Startup
     {
@@ -12,8 +16,21 @@ namespace OnlineStore
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services) => services.AddControllersWithViews();
-        
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("OnlineStore.View"));
+            });
+
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<ApplicationContext>();
+
+            services.AddControllersWithViews();
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Core.Abstract
+﻿namespace OnlineStore.Core.Abstracts
 {
     public interface ITypeProduct
     {
