@@ -1,16 +1,11 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using OnlineStore.View.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OnlineStore.View.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger) => _logger = logger;
-
         public IActionResult Index() => View();
 
         public IActionResult Privacy() => View();

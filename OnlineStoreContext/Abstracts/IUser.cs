@@ -2,7 +2,7 @@
 
 namespace OnlineStore.Core.Abstracts
 {
-    public interface IUser : IFullName
+    public interface IUser : IFullName, ILocation
     {
         public DateTime DateOfBirth { get; set; }
     }
