@@ -48,7 +48,7 @@ namespace OnlineStore.View.ViewModels
 
         [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Номер квартиры")]
-        public int NumberHouse { get; set; }
+        public int? NumberHouse { get; set; }
 
         [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Номер телефона")]
@@ -57,11 +57,11 @@ namespace OnlineStore.View.ViewModels
 
         [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Возраст")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Дата рождения")]
         [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
     }
 }

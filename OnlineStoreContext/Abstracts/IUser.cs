@@ -4,6 +4,6 @@ namespace OnlineStore.Core.Abstracts
 {
     public interface IUser : IFullName, ILocation
     {
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
     }
 }

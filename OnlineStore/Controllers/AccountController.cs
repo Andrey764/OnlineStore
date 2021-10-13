@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using OnlineStore.View.Models;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.Core.DBClasses;
@@ -59,6 +60,33 @@ namespace OnlineStore.View.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Registration(RegistrationViewModel model)
         {
+            const int minYear = 1899;
+            var maxYear = DateTime.Now.Year - 1;
+
+            if (model.DateOfBirth?.Year <= minYear)
+            {
+                ModelState.AddModelError("", $"Год должен быть больше {minYear}");
+                return View(model);
+            }
+
+            if (model.DateOfBirth?.Year > maxYear)
+            {
+                ModelState.AddModelError("", $"Год должен быть меньше {maxYear + 1}");
+                return View(model);
+            }
+
+            if (model.Age <= 0)
+            {
+                ModelState.AddModelError("", "Возраст не может быть меньше нуля или равен ему");
+                return View(model);
+            }
+
+            if (model.NumberHouse <= 0)
+            {
+                ModelState.AddModelError("", "Номер квартиры не может быть меньше нуля или равен ему");
+                return View(model);
+            }
+
             if (!ModelState.IsValid)
                 return View(model);
 
