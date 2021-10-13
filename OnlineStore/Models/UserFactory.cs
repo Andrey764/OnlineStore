@@ -16,7 +16,7 @@ namespace OnlineStore.View.Models
                 FirstName = model.FirstName,
                 MiddleName = model.MiddleName,
                 LastName = model.LastName,
-                Country = model.Country,
+                Region = model.Region,
                 City = model.City,
                 NumberHouse = model.NumberHouse,
                 Address = model.Address

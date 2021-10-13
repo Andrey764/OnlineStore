@@ -39,8 +39,8 @@ namespace OnlineStore.View.ViewModels
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Поле пустое")]
-        [Display(Name = "Страна")]
-        public string Country { get; set; }
+        [Display(Name = "Область")]
+        public string Region { get; set; }
 
         [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Город")]
