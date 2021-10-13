@@ -1,1 +1,79 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Регистрация";
+}
+@model OnlineStore.View.ViewModels.RegistrationViewModel
+
+<section class="registration">
+    <form class="registration-form" method="post" asp-action="Registration" asp-controller="Account">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="email" placeholder="@Html.DisplayNameFor(m => m.Email)" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" placeholder="@Html.DisplayNameFor(m => m.Password)" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" type="password" placeholder="@Html.DisplayNameFor(m => m.ConfirmPassword)" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" type="text" placeholder="@Html.DisplayNameFor(m => m.FirstName)" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="MiddleName"></label>
+            <input asp-for="MiddleName" type="text" placeholder="@Html.DisplayNameFor(m => m.MiddleName)" />
+            <span asp-validation-for="MiddleName" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" type="text" placeholder="@Html.DisplayNameFor(m => m.LastName)" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Age"></label>
+            <input asp-for="Age" type="text" placeholder="@Html.DisplayNameFor(m => m.Age)" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Region"></label>
+            <input asp-for="Region" type="text" placeholder="@Html.DisplayNameFor(m => m.Region)" />
+            <span asp-validation-for="Region" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="City"></label>
+            <input asp-for="City" type="text" placeholder="@Html.DisplayNameFor(m => m.City)" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Address"></label>
+            <input asp-for="Address" type="text" placeholder="@Html.DisplayNameFor(m => m.Address)" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="NumberHouse"></label>
+            <input asp-for="NumberHouse" type="text" placeholder="@Html.DisplayNameFor(m => m.NumberHouse)" />
+            <span asp-validation-for="NumberHouse" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" type="tel" placeholder="@Html.DisplayNameFor(m => m.PhoneNumber)" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="DateOfBirth"></label>
+            <input asp-for="DateOfBirth" type="date" placeholder="@Html.DisplayNameFor(m => m.DateOfBirth)" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit">Зарегистрироваться</button>
+            <a asp-action="Login" asp-controller="Account">Войти</a>
+        </div>
+    </form>
+</section>
