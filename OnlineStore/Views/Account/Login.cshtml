@@ -1,1 +1,28 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Вход";
+}
+@model OnlineStore.View.ViewModels.LoginViewModel
+
+<section class="login">
+    <form class="login-form" method="post" asp-action="Login" asp-controller="Account" asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="email" placeholder="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="RememberMe"></label>
+            <input asp-for="RememberMe" type="checkbox" />
+        </div>
+        <div>
+            <button type="submit">Войти</button>
+            <a asp-action="Registration" asp-controller="Account">Зарегистрироваться</a>
+        </div>
+    </form>
+</section>
