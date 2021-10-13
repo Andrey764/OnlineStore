@@ -8,12 +8,12 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div>
             <label asp-for="Email"></label>
-            <input asp-for="Email" type="email" placeholder="Email" />
+            <input asp-for="Email" type="email" placeholder="@Html.DisplayNameFor(m => m.Email)" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div>
             <label asp-for="Password"></label>
-            <input asp-for="Password" type="password" placeholder="Password" />
+            <input asp-for="Password" type="password" placeholder="@Html.DisplayNameFor(m => m.Password)" />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
         <div>
