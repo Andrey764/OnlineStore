@@ -30,11 +30,17 @@ namespace OnlineStore.View.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
+            if (await _userManager.FindByNameAsync(model.Email) is null)
+            {
+                ModelState.AddModelError("", "Такого пользователя не существует");
+                return View(model);
+            }
+
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
 
             if (!result.Succeeded)
             {
-                ModelState.AddModelError("", "Не правильный логин и (или) пароль");
+                ModelState.AddModelError("", "Не правильный пароль");
                 return View(model);
             }
 
