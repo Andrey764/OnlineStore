@@ -5,8 +5,9 @@ namespace OnlineStore.View.ViewModels
     public class LoginViewModel
     {
         [Required(ErrorMessage = "Поле пустое")]
-        [Display(Name = "Логин")]
-        public string Login { get; set; }
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Поле пустое")]
         [DataType(DataType.Password)]

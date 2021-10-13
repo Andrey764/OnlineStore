@@ -7,10 +7,6 @@ namespace OnlineStore.View.ViewModels
     public class RegistrationViewModel : IFullName, ILocation
     {
         [Required(ErrorMessage = "Поле пустое")]
-        [Display(Name = "Логин")]
-        public string Login { get; set; }
-
-        [Required(ErrorMessage = "Поле пустое")]
         [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

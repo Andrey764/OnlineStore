@@ -9,7 +9,7 @@ namespace OnlineStore.View.Models
         {
             return new User()
             {
-                UserName = model.Login,
+                UserName = model.Email,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 DateOfBirth = model.DateOfBirth,
