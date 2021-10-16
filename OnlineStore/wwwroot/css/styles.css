@@ -4,5 +4,10 @@
 }
 
 .login {
-    width: 300px
+    width: 100%;
+}
+
+.login-form {
+    width: 300px;
+    margin: 0 auto;
 }
