@@ -40,7 +40,7 @@ namespace OnlineStore.View
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Content/Error");
                 app.UseHsts();
             }
             app.UseHttpsRedirection();

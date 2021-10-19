@@ -23,7 +23,7 @@ body {
     margin: 0 auto;
 }
 
-.new-conteiner {
+.new-container {
     margin: 0;
     margin-left: 0;
     margin-right: 0;
@@ -33,7 +33,6 @@ body {
 .sidenav {
     height: 100%;
     width: 2px;
-    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
@@ -41,15 +40,16 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     overflow-x: hidden;
-    padding: 0px;
+    padding: 0;
     transition: 0.2s;
 }
+
     .sidenav:hover {
         width: 250px;
         padding: 15px;
     }
 
-    /*.close {
+/*.close {
         width: 30px;
         height: 30px;
         background-color: rgb(226 0 0);

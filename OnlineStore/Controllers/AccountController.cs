@@ -48,7 +48,7 @@ namespace OnlineStore.View.Controllers
             if (!string.IsNullOrWhiteSpace(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                 return Redirect(model.ReturnUrl);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Main", "Content");
         }
 
         public IActionResult Registration()
@@ -104,14 +104,14 @@ namespace OnlineStore.View.Controllers
 
             await _signInManager.SignInAsync(user, false);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Main", "Content");
         }
 
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Main", "Content");
         }
     }
 }
