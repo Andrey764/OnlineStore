@@ -11,5 +11,7 @@ namespace OnlineStore.Core.Abstracts
         public int IdType { get; set; }
         public string Characteristics { get; set; }
         public string PathImage { get; set; }
+        public string AddreviatedDescription();
+        public Dictionary<string, string> GenerateCharacteristics();
     }
 }

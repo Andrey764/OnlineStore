@@ -1,0 +1,35 @@
+﻿@{
+	ViewData["Title"] = "Главная";
+}
+@using OnlineStore.Core.Abstracts;
+@model IEnumerable<IProduct>
+
+<section @* style="display:grid; grid-template-columns: 1fr 5fr"*@>
+	<form id="mySidenav" class="sidenav" style="position:absolute; display:flex; flex-direction:column;">
+			@*<a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>*@
+			<label for="search">Поиск товара по названию:</label>
+			<input name="search" id="search" type="text" />
+
+			<label for="minPrice">Минимальная сума:</label>
+			<input name="minPrice" id="minPrice" type="text" value="@Model.Select(p=>p.Price).Min()"/>
+			
+			<label for="maxPrice">Максимальная сума:</label>
+			<input name="maxPrice" id="maxPrice" type="text" value="@Model.Select(p=>p.Price).Max()"/>
+			<input type="submit" value="Применить"/>
+	</form>
+	<div class="conteiner" style="display:grid; grid-template-columns:repeat(4,1fr);">
+		@foreach (var Product in Model)
+		{
+			<div class="card" style="width: 18rem; margin: 10px;">
+				<img src="@Product.PathImage" class="card-img-top" alt="@Product.Title">
+				<div class="card-body">
+					<h5 class="card-title"> @Product.Title </h5>
+					<p class="card-text"> @Product.AddreviatedDescription() </p>
+					<p class="card-text">цена: @Product.Price грн</p>
+					<a asp-action="Details" asp-controller="Content" asp-route-id="@Product.Id">Подробнее</a>
+					@*<a href="#" class="btn btn-primary"> Подробнее </a>*@
+				</div>
+			</div>
+		}
+	</div>
+</section>

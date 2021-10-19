@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Детальная информация";
+}
+@using OnlineStore.Core.Abstracts;
+@model IProduct
+
+<section>
+	<div style="display:grid; grid-template-columns: repeat(2,1fr)">
+		<div>
+			<h4>@Model.Title</h4>
+			<p>@Model.Description</p>
+			<table>
+				@foreach (var item in Model.GenerateCharacteristics())
+				{
+					<tr>
+						<td>@item.Key</td>
+						<td>@item.Value</td>
+					</tr>
+				}
+			</table>
+		</div>
+		<div style="display:flex; flex-direction:column">
+			<img src="@Model.PathImage" class="card-img-top" alt="@Model.Title">
+			<div>{тип продукта} цена @Model.Price</div>
+		</div>
+	</div>
+
+</section>

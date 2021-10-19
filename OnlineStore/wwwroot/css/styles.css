@@ -22,3 +22,40 @@ body {
     width: 300px;
     margin: 0 auto;
 }
+
+.new-conteiner {
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 2px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow-x: hidden;
+    padding: 0px;
+    transition: 0.2s;
+}
+    .sidenav:hover {
+        width: 250px;
+        padding: 15px;
+    }
+
+    /*.close {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(226 0 0);
+        text-align: center;
+    }
+
+    .close:hover {
+        background-color: rgb(114 0 0);
+    }*/
