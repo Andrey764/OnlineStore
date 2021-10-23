@@ -10,17 +10,13 @@ body {
     padding-left: 0;
 }
 
-.login {
+.login,
+.registration {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-form {
-    width: 300px;
-    margin: 0 auto;
 }
 
 .new-container {
@@ -30,10 +26,17 @@ body {
     width: 100%;
 }
 
+.login-form,
+.registration-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
 .sidenav {
     height: 100%;
     width: 2px;
     z-index: 1;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: white;
