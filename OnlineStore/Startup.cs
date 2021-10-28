@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using OnlineStore.Core.Context;
 using OnlineStore.Core.DBClasses;
 using Microsoft.AspNetCore.Builder;
@@ -24,10 +26,10 @@ namespace OnlineStore.View
             });
 
             services.AddIdentity<User, IdentityRole>(options =>
-            {
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequiredLength = 6;
-            }).AddEntityFrameworkStores<ApplicationContext>();
+             {
+                 options.Password.RequireNonAlphanumeric = false;
+                 options.Password.RequiredLength = 6;
+             }).AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddControllersWithViews();
         }
@@ -48,8 +50,8 @@ namespace OnlineStore.View
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

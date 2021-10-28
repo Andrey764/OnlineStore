@@ -12,11 +12,13 @@ namespace OnlineStore.View.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Login(string returnUrl = null)
@@ -93,6 +95,13 @@ namespace OnlineStore.View.Controllers
             var user = UserFactory.CreateUser(model);
 
             var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (await _roleManager.RoleExistsAsync("User") == false)
+            {
+                await _roleManager.CreateAsync(new IdentityRole("User"));
+            }
+
+            await _userManager.AddToRoleAsync(user, "User");
 
             if (!result.Succeeded)
             {

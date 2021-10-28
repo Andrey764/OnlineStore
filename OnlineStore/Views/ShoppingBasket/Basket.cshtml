@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Корзина";
+}
+
+@model OnlineStore.View.ViewModels.ShoppingBasketViewModel
+
+<section class="basket">
+    @foreach (var product in Model.Products)
+    {
+        <div>
+            <p>@product.Title</p>
+            <p>@product.Price</p>
+        </div>
+    }
+</section>
